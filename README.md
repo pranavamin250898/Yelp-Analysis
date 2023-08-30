@@ -88,17 +88,14 @@ Follow these steps to get started:
 ## Contributing
 
 1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/your-feature`
+2. Create a new branch: 
 3. Make your contributions.
 4. Create a pull request describing your changes.
 
-## License
-
-This project is licensed under the [Your License] License.
 
 ## Contact
 
-For any questions or inquiries, please contact [Your Name] at [your@email.com].
+For any questions or inquiries, please contact [Pranav Amin] at [pranavamin250898@gmail.com].
 
 ---
 Feel free to customize this README.md template further based on your project's specific details and requirements.
