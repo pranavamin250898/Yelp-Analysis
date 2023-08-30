@@ -49,6 +49,9 @@ The project employs the Yelp dataset, encompassing various aspects of businesses
 
 ## Project Flow
 
+![image](https://github.com/pranavamin250898/Yelp-Analysis/assets/40302495/71b022df-5a2c-460e-8cb1-42968e184e5f)
+
+
 The project follows these key steps:
 
 1. Data Collection: Obtain Yelp dataset in JSON and CSV formats.
