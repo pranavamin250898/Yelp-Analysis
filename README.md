@@ -1,6 +1,6 @@
 # Yelp Dataset Project
 
-![Project Banner](path-to-project-banner.png)
+
 
 ## Table of Contents
 
