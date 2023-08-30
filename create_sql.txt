@@ -1,0 +1,65 @@
+-- Database: DB_Flight
+
+-- DROP DATABASE IF EXISTS "DB_Flight";
+
+CREATE DATABASE "DB_Flight"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_Canada.1252'
+    LC_CTYPE = 'English_Canada.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+	
+	
+
+
+CREATE TABLE IF NOT EXISTS public.carrier_details
+(
+    CARRIER_ID SERIAL PRIMARY KEY,
+    OP_CARRIER char NOT NULL,
+    OP_CARRIER_FL_NUM integer NOT NULL,
+    UNIQUE (OP_CARRIER, OP_CARRIER_FL_NUM)
+)
+
+CREATE TABLE IF NOT EXISTS public.flight
+(
+	FLIGHT_ID SERIAL PRIMARY KEY,
+	CARRIER_ID integer NOT NULL,
+	FL_DATE date,
+	ORIGIN char,
+	DEST char,
+	CRS_DEP_TIME integer,
+	CRS_ARR_TIME integer,
+	DISTANCE integer,
+	FOREIGN KEY(CARRIER_ID) REFERENCES public.carrier_details(CARRIER_ID),
+)
+
+CREATE TABLE IF NOT EXISTS public.actual_flight
+(
+	ACTUAL_ID SERIAL PRIMARY KEY,
+	FLIGHT_ID char NOT NULL,
+	DEP_TIME integer,
+	TAXI_OUT integer,
+	WHEELS_OFF integer,
+	WHEELS_ON integer,
+	TAXI_IN integer,
+	ARR_TIME integer,
+	AIR_TIME integer,
+	FOREIGN KEY(FLIGHT_ID) REFERENCES public.flight(FLIGHT_ID),
+)
+
+CREATE TABLE IF NOT EXISTS public.change_flight
+(
+	CHANGE_ID SERIAL PRIMARY KEY,
+	FLIGHT_ID char NOT NULL,
+	CANCELLED_DIVERTED char,
+	CANCELLATION_CODE char,
+	CARRIER_DELAY integer,
+	WEATHER_DELAY integer,
+	NAS_DELAY integer,
+	SECURITY_DELAY integer,
+	LATE_AIRCRAFT_DELAY integer,
+	FOREIGN KEY(FLIGHT_ID) REFERENCES public.flight(FLIGHT_ID),
+)
