@@ -75,7 +75,7 @@ Follow these steps to get started:
    - Databricks account for Apache Spark analysis.
 
 2. Installation:
-   - Clone this repository: `git clone https://github.com/yourusername/your-repo.git`
+   - Clone this repository: [`git clone https://github.com/yourusername/your-repo.git`](https://github.com/pranavamin250898/Yelp-Analysis.git)
 
 ## Usage
 
